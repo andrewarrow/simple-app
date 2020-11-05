@@ -1,9 +1,12 @@
-version: "2"
+version: "3"
 
 services:
   app:
-    image: golang:1.6.1-alpine
-    volumes:
-      - .:/go/src/go-with-compose
-    working_dir: /go/src/go-with-compose
-    command: go run main.go
+    build:
+      context: . # Use an image built from the specified dockerfile in the current directory.
+      dockerfile: Dockerfile
+    networks: # Networks to join
+      - backend
+
+  networks:
+    backend: 
