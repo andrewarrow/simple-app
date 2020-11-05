@@ -10,6 +10,6 @@ func main() {
 	for {
 		fmt.Println("hi", i)
 		i++
-		time.Sleep(time.Second * 1)
+		time.Sleep(time.Second * 5)
 	}
 }
