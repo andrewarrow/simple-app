@@ -5,8 +5,3 @@ services:
     build:
       context: . # Use an image built from the specified dockerfile in the current directory.
       dockerfile: Dockerfile
-    networks: # Networks to join
-      - backend
-
-  networks:
-    backend: 
