@@ -8,7 +8,7 @@ import (
 func main() {
 	i := 0
 	for {
-		fmt.Println("hi-test", i)
+		fmt.Println("hi-test2", i)
 		i++
 		time.Sleep(time.Second * 5)
 	}
