@@ -21,11 +21,11 @@ func main() {
 		fmt.Println("hi-test3", i)
 		i++
 		time.Sleep(time.Second * 5)
-		db, _ := sql.Open("mysql", "root:123456@/")
+		db, err := sql.Open("mysql", "root:123456@/")
 		defer db.Close()
 
 		var version string
 		db.QueryRow("SELECT VERSION()").Scan(&version)
-		fmt.Println("Connected to:", version)
+		fmt.Println("Connected to:", version, err)
 	}
 }
