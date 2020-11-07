@@ -25,7 +25,7 @@ func main() {
 		defer db.Close()
 
 		var version string
-		db.QueryRow("SELECT VERSION()").Scan(&version)
+		db.QueryRow("SELECT NOW() as version").Scan(&version)
 		fmt.Println("Connected to:", version, err)
 	}
 }
