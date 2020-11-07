@@ -18,8 +18,14 @@ func main() {
 	fmt.Println("Connected to:", version)
 
 	for {
-		fmt.Println("hi-test2", i)
+		fmt.Println("hi-test3", i)
 		i++
 		time.Sleep(time.Second * 5)
+		db, _ := sql.Open("mysql", "root:123456@/")
+		defer db.Close()
+
+		var version string
+		db.QueryRow("SELECT VERSION()").Scan(&version)
+		fmt.Println("Connected to:", version)
 	}
 }
