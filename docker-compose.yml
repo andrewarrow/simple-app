@@ -3,13 +3,5 @@ version: "3"
 services:
   app:
     build:
-      context: . # Use an image built from the specified dockerfile in the current directory.
+      context: . 
       dockerfile: Dockerfile
-    links:
-      - mariadb
-  mariadb:
-    environment:
-      - MYSQL_ROOT_PASSWORD=123456
-    image: mariadb
-    ports:
-      - "3306:3306"
